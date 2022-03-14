@@ -46,11 +46,12 @@ void ENLegnSimEventAction::BeginOfEventAction(const G4Event* evt){
 
 // Get the number of stored trajectories and calculate the statistics
 void ENLegnSimEventAction::EndOfEventAction(const G4Event* evt){
-    G4int event_id = evt->GetEventID();
+  G4int event_id = evt->GetEventID();
 
   ENLegnSimRunAction *runac = (ENLegnSimRunAction*)(G4RunManager::GetRunManager()->GetUserRunAction());
 
-
-runac->UpdateStatistics(Statistics);
-
+  if(Statistics.ENeutronCreation.size()>0)
+  {
+    runac->UpdateStatistics(Statistics);
+  }
 }
