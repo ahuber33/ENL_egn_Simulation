@@ -50,7 +50,7 @@ void ENLegnSimEventAction::EndOfEventAction(const G4Event* evt){
 
   ENLegnSimRunAction *runac = (ENLegnSimRunAction*)(G4RunManager::GetRunManager()->GetUserRunAction());
 
-  if(Statistics.ENeutronCreation.size()>0)
+  if(Statistics.EBremPlaque.size()>0)
   {
     runac->UpdateStatistics(Statistics);
   }

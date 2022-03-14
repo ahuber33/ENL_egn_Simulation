@@ -22,8 +22,4 @@
 
 #commit #2 [ENLegnSim.0.0.1]
 # - Cleaning of vis.mac and vmrl.mac
-<<<<<<< HEAD
 # - Add a condition for the datas integration -> ROOT files too fat due to IncidentE and deposit if you want information on neutron with stat
-=======
-# - Add a condition for the datas integration -> ROOT files too fat due to IncidentE and depositi if you want information on neutron with stat
->>>>>>> 674b733f1d724be47e1c0363800f46fc6b385db0
