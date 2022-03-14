@@ -19,3 +19,7 @@
 # - Add of photon nuclear process for gammas (process g,n)
 # - Add of NeutronHPphysics
 # - Creation of vectors in the ROOT Tree to obtain all datas about gammas and neutrons for each events
+
+#commit #2 [ENLegnSim.0.0.1]
+# - Cleaning of vis.mac and vmrl.mac
+# - Add a condition for the datas integration -> ROOT files too fat due to IncidentE and depositi if you want information on neutron with stat

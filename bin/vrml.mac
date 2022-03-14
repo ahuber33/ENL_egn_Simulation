@@ -1,125 +1,8 @@
-# /vis/open OGL 600x600-0+0
-# /vis/drawVolume
-#/vis/viewer/set/style wireframe
-# /vis/viewer/set/viewpointThetaPhi 90 0
-# /vis/viewer/zoom 10.
-# #/vis/viewer/set/auxiliaryEdge true
-# #/vis/set/lineWidth 2
-# #/vis/scene/add/scale   # Simple scale line
-# #/vis/scene/add/axes    # Simple axes: x=red, y=green, z=blue.
-# /vis/viewer/set/hiddenMarker true
-# /vis/scene/add/trajectories smooth
-# /vis/scene/endOfEventAction accumulate
-
 /tracking/verbose 0
 /run/verbose 1
-/run/printProgress 100000
-
-
-# /vis/scene/endOfEventAction accumulate 10
-# /vis/scene/endOfEventAction refresh
-
-# /vis/scene/add/hits
-# /tracking/storeTrajectory 1
-
-
-
-# /vis/scene/create
-# /vis/scene/add/volume
-# /vis/sceneHandler/create OGLIX
-# /vis/viewer/create		
-
-
-# # /vis/viewer/set/viewpointThetaPhi 90 0
-# # #/vis/viewer/set/viewpointThetaPhi 0 0
-# # /vis/viewer/zoom 10.
-# # #/vis/viewer/set/style wireframe
-
-
-# # /vis/sceneHandler/attach
-# # /vis/viewer/flush
-
+/run/printProgress 1000000
 
 /run/initialize
-
-# #/vis/open VRML2FILE
-# #/vis/scene/create
-
-
-
-
-
-######################################################
-### PART TO SIMULATE PARTICLE WITH GPS (no setgun) ###
-######################################################
-/gps/number 1
-
-
-# PART TO SIMULATE 1 MEV ELECTRON !!!!!!!!
-# #/gps/particle geantino
-# /gps/particle e-
-# /gps/pos/type Point
-# #/gps/pos/centre 20 15. -100.0 mm
-# /gps/pos/centre -5.5 0 0.0 mm
-# #/gps/pos/centre 100.0 111.0 78.4 mm
-# #/gps/direction 0.0 0.0 1.0
-# /gps/direction 1.0 0.0 0.0
-#  /gps/energy 0.6 MeV
-
-#/gps/particle e-
-#/gps/pos/type Plane
-#/gps/pos/shape Rectangle
-#/gps/pos/centre 0. 0. -116 mm 
-#/gps/pos/halfx 128 mm
-#/gps/pos/halfy 128 mm
-#/gps/direction 0.0 0.0 1.0
-#/gps/energy 1. MeV
-
-
-
-# /gps/pos/type Volume
-# /gps/pos/shape Cylinder
-# #/gps/pos/centre -5.45 0. 0. mm
-# #/gps/pos/centre -4.9 0. 0. mm
-# #/gps/pos/centre -5.25 0. 0. mm
-# /gps/pos/centre -5.25 40. 20. mm
-# #40 20 => Position 5
-# #-40 20 => Position 4
-# #-40 -20 => Position 2
-# #40 -20 => Position 3
-# /gps/pos/radius 22 mm
-# /gps/pos/halfz 0.0005 mm
-# /gps/particle ion
-# /gps/ion 27 60 0 0  
-# /grdm/nucleusLimits 60 60 27 27
-# #/gps/particle e-
-# /gps/energy 0. MeV
-
-# /gps/pos/rot1 0 0 1 
-# /gps/pos/rot2 0 1 0
-# /gps/ang/rot1 0 0 1	
-# /gps/ang/rot2 0 1 0	
-# /gps/ang/type iso
-# #/gps/direction 1.0 0.0 0.0
-
-
-# /gps/particle ion
-# /gps/ion 55 137 0 0  
-# /grdm/nucleusLimits 137 137 55 55
-#/gps/particle e-
-#/gps/pos/type Point
-#/gps/pos/centre 0 0. -300.0 mm
-#/gps/pos/centre 0.0 0.0 -100.0 mm
-#/gps/ang/type iso
-#/gps/energy 5000.0 keV
-#/gps/direction 0.0 0.0 1.0
-
-
-# #/gps/pos/type Point
-# /gps/pos/centre 0 300. 0.0 mm
-# #/gps/direction 0.0 -1.0 0.0
-# /gps/ang/type iso
-# /gps/energy 667.0 keV
 
 
 
@@ -137,7 +20,7 @@
 
 /gps/ene/type Arb
 /gps/hist/type arb
-/gps/hist/file Spectre_scan08_1.txt
+/gps/hist/file Spectre_scan08_2.txt
 /gps/hist/inter Lin
 
 #/gps/particle ion
