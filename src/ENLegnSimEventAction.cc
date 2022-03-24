@@ -34,6 +34,8 @@ void ENLegnSimEventAction::BeginOfEventAction(const G4Event* evt){
 
   G4int event_id = evt->GetEventID();
 
+  //G4cout << "EVENT : " << event_id << G4endl;
+
   Statistics.IncidentE = 0;
   Statistics.Deposit = 0;
   Statistics.EBremCreation.clear();
@@ -50,7 +52,7 @@ void ENLegnSimEventAction::EndOfEventAction(const G4Event* evt){
 
   ENLegnSimRunAction *runac = (ENLegnSimRunAction*)(G4RunManager::GetRunManager()->GetUserRunAction());
 
-  if(Statistics.EBremPlaque.size()>0)
+  if(Statistics.ENeutronCreation.size()>0)
   {
     runac->UpdateStatistics(Statistics);
   }

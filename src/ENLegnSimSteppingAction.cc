@@ -90,8 +90,8 @@ ENLegnSimSteppingAction::ENLegnSimSteppingAction()
 
     if(Parent_ID >0 && partname =="neutron")
     {
-      //if(aStep->GetTrack()->GetCreatorProcess()->GetProcessName()=="photonNuclear")
-      //{
+      if(aStep->GetTrack()->GetCreatorProcess()->GetProcessName()=="photonNuclear")
+      {
         if(StepNo ==1)
         {
           //G4cout << "neutron process : " << aStep->GetTrack()->GetCreatorProcess()->GetProcessName() << G4endl;
@@ -105,7 +105,7 @@ ENLegnSimSteppingAction::ENLegnSimSteppingAction()
           //G4cout << "neutron energy en sortie plaque = " << aStep->GetPreStepPoint()->GetKineticEnergy()/keV << G4endl;
         }
 
-      //}
+      }
     }
 
 

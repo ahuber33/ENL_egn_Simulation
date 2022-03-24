@@ -172,11 +172,15 @@ G4VPhysicalVolume* ENLegnSimGeometry::Construct( ){
   // Build scint et wrapping volumes*
   //*********************** *********
   //Simply calls functions from Scintillator() class
-  LogicalPlaqueAcier = Geom->GetPlaqueAcier();
+  LogicalPlaque1 = Geom->GetPlaque1();
+  LogicalPlaque2 = Geom->GetPlaque2();
+  LogicalPlaque3 = Geom->GetPlaque3();
 
 
   // Set colors of various block materials
-  LogicalPlaqueAcier->SetVisAttributes(black);
+  LogicalPlaque1->SetVisAttributes(black);
+  LogicalPlaque2->SetVisAttributes(cyan);
+  LogicalPlaque3->SetVisAttributes(red);
 
 
 
@@ -193,11 +197,21 @@ G4VPhysicalVolume* ENLegnSimGeometry::Construct( ){
   //***********************
 
 
-  PhysicalPlaqueAcier = new G4PVPlacement(G4Transform3D
+  PhysicalPlaque1 = new G4PVPlacement(G4Transform3D
     (DontRotate,G4ThreeVector(0*mm,0.*mm,0.*mm)), // Set at origin as basis of everything else
-    LogicalPlaqueAcier,"PlaqueAcier",
+    LogicalPlaque1,"Plaque1",
     LogicalWorld,false,0);
 
+
+    PhysicalPlaque2 = new G4PVPlacement(G4Transform3D
+      (DontRotate,G4ThreeVector(0*mm,0.*mm,5.5*mm)), // Set at origin as basis of everything else
+      LogicalPlaque2,"Plaque2",
+      LogicalWorld,false,0);
+
+      PhysicalPlaque3 = new G4PVPlacement(G4Transform3D
+        (DontRotate,G4ThreeVector(0*mm,0.*mm,9.25*mm)), // Set at origin as basis of everything else
+        LogicalPlaque3,"Plaque3",
+        LogicalWorld,false,0);
 
     #else
 

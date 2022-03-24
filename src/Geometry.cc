@@ -87,14 +87,41 @@ Geometry::~Geometry(){
 }
 
 
-G4LogicalVolume *Geometry::GetPlaqueAcier(){
+G4LogicalVolume *Geometry::GetPlaque1(){
 
-  Material = scintProp->GetMaterial("Acier");
+  Material = scintProp->GetMaterial("Alu");
 
   G4Box *Box = new G4Box   ("Box",             //its name
-  			    PlaqueLength/2, PlaqueLength/2, PlaqueThickness/2);    //its size
+  			    //PlaqueLength/2, PlaqueLength/2, PlaqueThickness/2);    //its size
+            PlaqueLength/2, PlaqueLength/2, 7*mm/2);    //its size
+  LogicalVolume = new G4LogicalVolume(Box, Material, "Plaque1",0,0,0);
 
-  LogicalVolume = new G4LogicalVolume(Box, Material, "PlaqueAcier",0,0,0);
+  return LogicalVolume;
+}
+
+
+G4LogicalVolume *Geometry::GetPlaque2(){
+
+  Material = scintProp->GetMaterial("Plomb");
+
+  G4Box *Box = new G4Box   ("Box",             //its name
+  			    PlaqueLength/2, PlaqueLength/2, 4*mm/2);    //its size
+
+  LogicalVolume = new G4LogicalVolume(Box, Material, "Plaque2",0,0,0);
+
+  return LogicalVolume;
+}
+
+
+
+G4LogicalVolume *Geometry::GetPlaque3(){
+
+  Material = scintProp->GetMaterial("plastic");
+
+  G4Box *Box = new G4Box   ("Box",             //its name
+  			    PlaqueLength/2, PlaqueLength/2, 3.5*mm/2);    //its size
+
+  LogicalVolume = new G4LogicalVolume(Box, Material, "Plaque3",0,0,0);
 
   return LogicalVolume;
 }

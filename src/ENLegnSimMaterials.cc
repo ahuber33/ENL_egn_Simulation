@@ -139,7 +139,7 @@ void ENLegnSimMaterials::Construct()
 	elementB = new G4Element("Boron","B",5,10.811*g/mole);
 	elementNa = new G4Element("Sodium","Na",11,22.989770*g/mole);
 	elementAl = new G4Element("Aluminum","Al",13,26.981538*g/mole);
-	elementFe = new G4Element ("Fer", "Fe", 26., 55.845*g/mole);
+	//elementFe = new G4Element ("Fer", "Fe", 26., 55.845*g/mole);
 	elementNi = new G4Element ("Nickel", "Nickel", 28., 58.6939*g/mole);
 	elementCr = new G4Element ("Chrome", "Chrome", 24., 51.9961*g/mole);
 	elementMn = new G4Element ("Manganese", "Manganese", 25., 54.938044*g/mole);
@@ -153,6 +153,11 @@ void ENLegnSimMaterials::Construct()
 	elementPb = new G4Element ("Plomb", "Plomb", 82., 207.2*g/mole);
 	elementLa = new G4Element ("Lanthane", "Lanthane", 57., 138.90547*g/mole);
 	elementBr = new G4Element ("Brome", "Brome", 35., 79.904*g/mole);
+	elementW = new G4Element ("Tungsten", "Tungsten", 74., 183.84*g/mole);
+	Fe56 = new G4Isotope("Fe56", 26, 56);
+	elementFe = new G4Element("Fer", "Fer", 1);
+	elementFe->AddIsotope(Fe56, 1);
+
 	// G4Isotope* N14 = new G4Isotope("N14", 7, 14);
 	// elementN = new G4Element("Azote", "Azote", 1);
 	// elementN->AddIsotope(N14, 100.*perCent);
@@ -181,6 +186,18 @@ void ENLegnSimMaterials::Construct()
 	Polypropylene = new G4Material("Polypropylene", 0.900*g/cm3, 2);
 	Polypropylene->AddElement(elementC, 3);
 	Polypropylene->AddElement(elementH, 6);
+
+	//#######################################################################################################################################
+	//#######################################################################################################################################
+
+	Tungstene = new G4Material("Tungstene", 19.3*g/cm3, 1, kStateSolid);
+	Tungstene->AddElement(elementW, 1);
+
+	//#######################################################################################################################################
+	//#######################################################################################################################################
+
+	Plomb = new G4Material("Plomb", 11.35*g/cm3, 1, kStateSolid);
+	Plomb->AddElement(elementPb, 1);
 
 	//#######################################################################################################################################
 	//#######################################################################################################################################
@@ -232,9 +249,9 @@ void ENLegnSimMaterials::Construct()
 	//#######################################################################################################################################
 	//#######################################################################################################################################
 
-	plastic = new G4Material("plastic", 1.3*g/cm3, 2,	kStateSolid, 273.15*kelvin,	1.0*atmosphere );
-	plastic->AddElement( elementH, 0.498 );
-	plastic->AddElement( elementC, 0.502 );
+	plastic = new G4Material("plastic", 0.96*g/cm3, 2,	kStateSolid);
+	plastic->AddElement( elementH, 4 );
+	plastic->AddElement( elementC, 2 );
 
 	//#######################################################################################################################################
 	//#######################################################################################################################################
@@ -264,9 +281,9 @@ void ENLegnSimMaterials::Construct()
 	//#######################################################################################################################################
 	//#######################################################################################################################################
 
-	Acier = new G4Material("Acier", 7.86*g/cm3, 2);
-	Acier->AddElement(elementFe, 0.99);
-	Acier->AddElement(elementC, 0.01);
+	Acier = new G4Material("Acier", 7.86*g/cm3, 1);
+	Acier->AddElement(elementFe, 1);
+	//Acier->AddElement(elementC, 0.01);
 
 	//#######################################################################################################################################
 	//#######################################################################################################################################

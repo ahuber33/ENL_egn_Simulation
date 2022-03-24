@@ -60,6 +60,9 @@
 #include "G4PhotoNuclearCrossSection.hh"
 #include "G4LowEGammaNuclearModel.hh"
 #include "G4CascadeInterface.hh"
+#include "G4LENDorBERTModel.hh"
+#include "G4LENDCombinedCrossSection.hh"
+
 
 using namespace CLHEP;
 
@@ -142,6 +145,7 @@ void ENLegnSimPhysics::ConstructProcess()
 
   G4ProcessManager* pManager = G4Gamma::Gamma()->GetProcessManager();
   pManager->AddDiscreteProcess(process);
+
 }
 
 void ENLegnSimPhysics::ConstructNeutron()

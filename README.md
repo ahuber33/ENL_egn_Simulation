@@ -23,3 +23,8 @@
 #commit #2 [ENLegnSim.0.0.1]
 # - Cleaning of vis.mac and vmrl.mac
 # - Add a condition for the datas integration -> ROOT files too fat due to IncidentE and deposit if you want information on neutron with stat
+
+#commit #3 [ENLegnSim.0.0.2] le 24/03/2022
+# - Add of INL cross sections data from different materials in order ton plot and compare with simulation. OK even is accuracy can be better with utilisation of LEND DATA.
+# - Add some materials (Pb, W)
+# - Add new geometries for studies with more than 1 plate

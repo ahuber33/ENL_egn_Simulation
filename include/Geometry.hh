@@ -26,7 +26,9 @@ public:
 
 public:
 
-  G4LogicalVolume *GetPlaqueAcier();
+  G4LogicalVolume *GetPlaque1();
+  G4LogicalVolume *GetPlaque2();
+  G4LogicalVolume *GetPlaque3();
 
 
 private:

@@ -56,6 +56,9 @@ private:
   G4Element* elementPb;
   G4Element* elementLa;
   G4Element* elementBr;
+  G4Element* elementW;
+
+  G4Isotope* Fe56;
 
   G4Material *SiO2;
   G4Material *B2O3;
@@ -79,6 +82,7 @@ private:
   G4Material *Neoprene;
   G4Material *Mica;
   G4Material *Plomb_Antimoine;
+  G4Material *Plomb;
   G4Material *LaBr3;
   G4Material *bs_glass;
   G4Material *polysty;
@@ -93,9 +97,7 @@ private:
   G4Material *cargille;
   G4Material *PMMA;
   G4Material *Alu;
-  G4Material *RTV;
-
-  
+  G4Material* Tungstene;
 
   G4double scintAbsorbconst;
   G4double scintIndexconst;
