@@ -109,6 +109,17 @@ ENLegnSimSteppingAction::ENLegnSimSteppingAction()
     }
 
 
+    if(partname =="gamma" && endproc !="Transportation")
+    {
+      //G4cout << "Interaction :" << endproc << G4endl;
+    }
+
+    if(endproc =="Rayl") evtac->SetInteraction(1);
+    if(endproc =="compt") evtac->SetInteraction(2);
+    if(endproc =="phot") evtac->SetInteraction(3);
+    if(endproc =="conv") evtac->SetInteraction(4);
+
+
     // if(Parent_ID>0)// && aStep->GetPreStepPoint()->GetPhysicalVolume()->GetName() == "PhysicalWorld")
     //   {
     //     //G4cout << "Ici" << G4endl

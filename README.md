@@ -28,3 +28,8 @@
 # - Add of INL cross sections data from different materials in order ton plot and compare with simulation. OK even is accuracy can be better with utilisation of LEND DATA.
 # - Add some materials (Pb, W)
 # - Add new geometries for studies with more than 1 plate
+
+#commit #4 [ENLegnSim.0.0.3] le 20/07/2022
+# - All the data files for cross section (ENDF, JENDL, ...) commit.
+# - Ajout du matériau Silicon
+# - Ajout d'une branche interaction pour connaitre les interactions liés aux gammas (utilisé lors du stage de Samuel Lecanuet pour comparaison).

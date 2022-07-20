@@ -76,6 +76,7 @@ private:
   G4Material *Polypropylene;
   G4Material *Compensation;
   G4Material *Papier;
+  G4Material *Silicon;
   G4Material *Nylon;
   G4Material *teflon;
   G4Material *mousse;

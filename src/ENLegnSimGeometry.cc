@@ -203,15 +203,15 @@ G4VPhysicalVolume* ENLegnSimGeometry::Construct( ){
     LogicalWorld,false,0);
 
 
-    PhysicalPlaque2 = new G4PVPlacement(G4Transform3D
-      (DontRotate,G4ThreeVector(0*mm,0.*mm,5.5*mm)), // Set at origin as basis of everything else
-      LogicalPlaque2,"Plaque2",
-      LogicalWorld,false,0);
-
-      PhysicalPlaque3 = new G4PVPlacement(G4Transform3D
-        (DontRotate,G4ThreeVector(0*mm,0.*mm,9.25*mm)), // Set at origin as basis of everything else
-        LogicalPlaque3,"Plaque3",
-        LogicalWorld,false,0);
+    // PhysicalPlaque2 = new G4PVPlacement(G4Transform3D
+    //   (DontRotate,G4ThreeVector(0*mm,0.*mm,5.5*mm)), // Set at origin as basis of everything else
+    //   LogicalPlaque2,"Plaque2",
+    //   LogicalWorld,false,0);
+    //
+    //   PhysicalPlaque3 = new G4PVPlacement(G4Transform3D
+    //     (DontRotate,G4ThreeVector(0*mm,0.*mm,9.25*mm)), // Set at origin as basis of everything else
+    //     LogicalPlaque3,"Plaque3",
+    //     LogicalWorld,false,0);
 
     #else
 

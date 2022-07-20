@@ -2,14 +2,16 @@
 
 
 echo "Début de traitement"
-myArr=("10" "25" "50" "100" "250" "500" "1000" "2500" "5000" "10000" "25000" "50000" "100000")
+myArr=("1" "10" "50" "10" "20")
 
 for idx in ${!myArr[*]}
 do
     while [[ $(pgrep -x ENLegnSim | wc -l) -gt 4 ]]
-    do
-	sleep 10
+    do 
+echo "Boucle"
+       sleep 10
     done
+
         #Init
         value=${myArr[$idx]}
         idx_fichier=$(($idx))
@@ -20,8 +22,8 @@ do
         sed -e "s/%energy/$value/g" base_$idx_fichier_bis.mac > base_$idx_fichier.mac
         # Suppression fichier temporaire
         rm base_$idx_fichier_bis.mac
-	./ENLegnSim Section_efficace_gamma_Silicone_${myArr[$idx]}keV 10000000 base_$idx_fichier.mac &
-	sleep 5
+	./ENLegnSim test_${myArr[$idx]}MeV 1000000 base_$idx_fichier.mac &
+	sleep 1
 done
 echo "Fin de traitement"
 

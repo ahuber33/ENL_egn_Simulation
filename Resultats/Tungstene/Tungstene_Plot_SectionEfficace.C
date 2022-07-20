@@ -42,12 +42,12 @@ float section_efficace(const char* filename, float Nsim, int variable)
   float Na = 6.022e+23; //mol-1
   float rho = 19.3; //g/cm-3
   float d = 0.01; //cm
-  
+
   float section_efficace = ((A*p)/(Na*rho*d))*1e24;
 
   cout << "Section efficace [" << filename << "] = " << section_efficace << endl;
 
-  
+
   return section_efficace;
 
   delete file;
@@ -64,7 +64,7 @@ float err_section_efficace(const char* filename, float Nsim, int variable)
   float Entries = Tree->GetEntries();
   float n=0;
   float p=0;
-  
+
   for(int i=0; i<Entries; i++)
     {
       Tree->GetEntry(i);
@@ -76,12 +76,12 @@ float err_section_efficace(const char* filename, float Nsim, int variable)
   float Na = 6.022e+23; //mol-1
   float rho = 19.3; //g/cm-3
   float d = 0.01; //cm
-  
+
   float section_efficace = ((A*p)/(Na*rho*d))*1e24;
 
   cout << "Section effiace [" << filename << "] = " << section_efficace << endl;
   //a->clear();
-  
+
   return section_efficace;
 }
 
@@ -92,7 +92,7 @@ void Tungstene_Plot_SectionEfficace()
   TGraph* JENDL = graph("Tungstene_JENDL_new.dat", 87, 1e-6, 1);
   TGraph* IAEA = graph("Tungstene_IAEA2019_new.dat", 80, 1e-6, 1);
 
-  
+
   new TCanvas;
   //  GEANT4->Draw();
   IAEA->Draw("");
@@ -103,7 +103,7 @@ void Tungstene_Plot_SectionEfficace()
 
   const int nfiles = 13;
   int variable =0;
-  
+
   float E[nfiles] = {10, 11, 12, 14, 16, 17, 18, 19, 20, 25, 30, 40, 50};
   float e_E[nfiles] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
   float SE[nfiles]= {
@@ -120,7 +120,7 @@ void Tungstene_Plot_SectionEfficace()
 		     section_efficace("Section_efficace_gn_Tungstene_30MeV.root", 10000000, variable),
 		     section_efficace("Section_efficace_gn_Tungstene_40MeV.root", 10000000, variable),
 		     section_efficace("Section_efficace_gn_Tungstene_50MeV.root", 10000000, variable)};
-  
+
   float e_SE[nfiles]= {
 		       err_section_efficace("Section_efficace_gn_Tungstene_10MeV.root", 10000000, variable),
 		       err_section_efficace("Section_efficace_gn_Tungstene_11MeV.root", 10000000, variable),
@@ -141,7 +141,7 @@ void Tungstene_Plot_SectionEfficace()
   Sim->Draw("PESAME");
   Sim->SetLineColor(kBlack);
 
-    
-  
+
+
 
 }

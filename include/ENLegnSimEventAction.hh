@@ -27,6 +27,7 @@ struct RunTally {
   std::vector<float> EBremPlaque;
   std::vector<float> ENeutronCreation;
   std::vector<float> ENeutronPlaque;
+  int Interaction;
 
   inline int operator ==(const RunTally& right) const
   {return (this==&right);}
@@ -45,6 +46,7 @@ public:
   void EndOfEventAction(const G4Event*);
   void AddEdep(G4float edep){Statistics.Deposit+=edep;}
   void SetIncidentE(G4float e){Statistics.IncidentE =e;}
+  void SetInteraction(G4int e){Statistics.Interaction =e;}
   G4float GetIncidentE(){return Statistics.IncidentE;}
   void FillEBremCreation(G4float e){Statistics.EBremCreation.push_back(e);}
   void FillEBremPlaque(G4float e){Statistics.EBremPlaque.push_back(e);}

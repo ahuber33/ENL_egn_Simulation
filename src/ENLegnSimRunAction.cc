@@ -39,12 +39,13 @@ void ENLegnSimRunAction::BeginOfRunAction(const G4Run* aRun){
 
     // create the branch for each event.
     // Be careful of the data structure here!  /F is a float  /I is an integer
-    RunBranch = theRunTree->Branch("IncidentE", &Stats.IncidentE, "IncidentE/F");
     RunBranch = theRunTree->Branch("Deposit", &Stats.Deposit, "Deposit/F");
+    RunBranch = theRunTree->Branch("IncidentE", &Stats.IncidentE, "IncidentE/F");
     RunBranch = theRunTree->Branch("EBremCreation", "vector<float>", &Stats.EBremCreation);
     RunBranch = theRunTree->Branch("EBremPlaque", "vector<float>", &Stats.EBremPlaque);
     RunBranch = theRunTree->Branch("ENeutronCreation", "vector<float>", &Stats.ENeutronCreation);
     RunBranch = theRunTree->Branch("ENeutronPlaque", "vector<float>", &Stats.ENeutronPlaque);
+    RunBranch = theRunTree->Branch("Interaction", &Stats.Interaction, "Interaction/I");
 
     //set the random seed to the CPU clock
   //G4Random::setTheEngine(new CLHEP::HepJamesRandom);
