@@ -154,6 +154,9 @@ void ENLegnSimMaterials::Construct()
 	elementLa = new G4Element ("Lanthane", "Lanthane", 57., 138.90547*g/mole);
 	elementBr = new G4Element ("Brome", "Brome", 35., 79.904*g/mole);
 	elementW = new G4Element ("Tungsten", "Tungsten", 74., 183.84*g/mole);
+	elementAu = new G4Element ("Au", "Au", 79., 196.966569*g/mole);
+	elementCd = new G4Element ("Cadmium", "Cadmium", 48., 112.414*g/mole);
+	elementTe = new G4Element ("Tellure", "Tellure", 52., 127.60*g/mole);
 	Fe56 = new G4Isotope("Fe56", 26, 56);
 	elementFe = new G4Element("Fer", "Fer", 1);
 	elementFe->AddIsotope(Fe56, 1);
@@ -179,6 +182,21 @@ void ENLegnSimMaterials::Construct()
 	H2O = new G4Material("Eau", 1.000*g/cm3, 2);
 	H2O->AddElement(elementH, 2);
 	H2O->AddElement(elementO, 1);
+
+	//#######################################################################################################################################
+	//#######################################################################################################################################
+
+	Or = new G4Material("Or", 19.3*g/cm3, 1);
+	Or->AddElement(elementAu, 1);
+
+
+	//#######################################################################################################################################
+	//#######################################################################################################################################
+
+	CdTe = new G4Material("CdTe", 5.85*g/cm3, 2);
+	CdTe->AddElement(elementCd, 1);
+	CdTe->AddElement(elementTe, 1);
+
 
 	//#######################################################################################################################################
 	//#######################################################################################################################################

@@ -13,16 +13,24 @@
 /gps/number 1
 /gps/particle gamma
 /gps/pos/type Point
-/gps/pos/centre 0.0 0.0 -100.0 mm
-#/gps/energy 10000 keV
-/gps/direction 0.0 0.0 1.0
+/gps/pos/centre 0.0 0.0 -100 mm
+#/gps/energy 150 MeV
+#/gps/direction 0.0 0.0 1.0
 #/gps/ang/type iso
 
-/gps/ene/type Arb
-/gps/hist/type arb
-/gps/hist/file Spectre_scan08_2.txt
-/gps/hist/inter Lin
+#/gps/ene/type Arb
+#/gps/hist/type arb
+#/gps/hist/file Spectre_scan08_2.txt
+#/gps/hist/inter Lin
 
 #/gps/particle ion
-#/gps/ion 11 22 0 0  
+#/gps/ion 27 57 0 0
+#/gps/energy 0 MeV
 #/grdm/nucleusLimits 60 60 27 27
+
+/gps/ene/type Exp
+/gps/ene/min 1. keV
+/gps/ene/max 200. MeV
+/gps/ene/ezero 0.805 MeV
+/gps/ang/type cos
+/gps/ang/rot1 -1 0 0

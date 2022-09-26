@@ -90,11 +90,12 @@ Geometry::~Geometry(){
 G4LogicalVolume *Geometry::GetPlaque1(){
 
   //Material = scintProp->GetMaterial("Alu");
-  Material = scintProp->GetMaterial("Silicon");
+  //Material = scintProp->GetMaterial("Tungstene");
+  Material = scintProp->GetMaterial("CdTe");
 
   G4Box *Box = new G4Box   ("Box",             //its name
-  			    //PlaqueLength/2, PlaqueLength/2, PlaqueThickness/2);    //its size
-            PlaqueLength/2, PlaqueLength/2, 0.1*mm/2);    //its size
+  			    PlaqueLength/2, PlaqueLength/2, PlaqueThickness/2);    //its size
+            //PlaqueLength/2, PlaqueLength/2, 0.1*mm/2);    //its size
   LogicalVolume = new G4LogicalVolume(Box, Material, "Plaque1",0,0,0);
 
   return LogicalVolume;
@@ -103,10 +104,10 @@ G4LogicalVolume *Geometry::GetPlaque1(){
 
 G4LogicalVolume *Geometry::GetPlaque2(){
 
-  Material = scintProp->GetMaterial("Plomb");
+  Material = scintProp->GetMaterial("Alu");
 
   G4Box *Box = new G4Box   ("Box",             //its name
-  			    PlaqueLength/2, PlaqueLength/2, 4*mm/2);    //its size
+  			    PlaqueLength/2, PlaqueLength/2, 1*mm/2);    //its size
 
   LogicalVolume = new G4LogicalVolume(Box, Material, "Plaque2",0,0,0);
 

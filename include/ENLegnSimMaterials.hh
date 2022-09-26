@@ -57,6 +57,9 @@ private:
   G4Element* elementLa;
   G4Element* elementBr;
   G4Element* elementW;
+  G4Element* elementAu;
+  G4Element* elementCd;
+  G4Element* elementTe;
 
   G4Isotope* Fe56;
 
@@ -99,6 +102,8 @@ private:
   G4Material *PMMA;
   G4Material *Alu;
   G4Material* Tungstene;
+  G4Material* Or;
+  G4Material* CdTe;
 
   G4double scintAbsorbconst;
   G4double scintIndexconst;
