@@ -34,7 +34,11 @@
 # - Ajout du matériau Silicon
 # - Ajout d'une branche interaction pour connaitre les interactions liés aux gammas (utilisé lors du stage de Samuel Lecanuet pour comparaison).
 
+<<<<<<< HEAD
 # Commit #5 [ENLegnSim.0.0.4] le 26/09/2022
+=======
+# Commit #4 [ENL_egn_Sim.0.0.4] le 26/09/2022
+>>>>>>> 7a50590392acbb5b83f6b86c1280a493d4c1512f
 # - A la demande du groupe pour Emmanuel, simulation rapide du Co57 afin d'avoir un spectre simulé + génération d'un spectre exp gamma. Le tout sur un CdTe de 2mm de profondeur avec 1mm d'alu juste devant. Les modifications dans le SteppingAction sont délimités.
 # - Afin de gagner du temps, la PhysicsList neutron a été commentée.
 # - Ajout élements Or, Cd et Te
