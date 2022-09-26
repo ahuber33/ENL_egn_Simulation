@@ -120,7 +120,7 @@ void ENLegnSimPhysics::ConstructProcess()
   emPhysicsList->ConstructProcess();
   particleList->ConstructProcess();
   raddecayList->ConstructProcess();
-  ConstructNeutron();
+  //ConstructNeutron();
 
   G4HadronInelasticProcess* process
   = new G4HadronInelasticProcess("photonNuclear", G4Gamma::Definition());

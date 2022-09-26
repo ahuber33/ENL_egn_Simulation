@@ -23,10 +23,16 @@ class G4Event;
 struct RunTally {
   float  IncidentE;
   float  Deposit;
+  float  Deposit_with_resolution;
   std::vector<float> EBremCreation;
   std::vector<float> EBremPlaque;
   std::vector<float> ENeutronCreation;
   std::vector<float> ENeutronPlaque;
+  std::vector<float> EgammaCreation;
+  std::vector<float> EgammaDeposit;
+  std::vector<float> EelecCreation;
+  std::vector<float> EelecDeposit;
+  std::vector<float> PositionDeposit;
   int Interaction;
 
   inline int operator ==(const RunTally& right) const
@@ -52,6 +58,11 @@ public:
   void FillEBremPlaque(G4float e){Statistics.EBremPlaque.push_back(e);}
   void FillENeutronCreation(G4float e){Statistics.ENeutronCreation.push_back(e);}
   void FillENeutronPlaque(G4float e){Statistics.ENeutronPlaque.push_back(e);}
+  void FillEGammaCreation(G4float e){Statistics.EgammaCreation.push_back(e);}
+  void FillEGammaDeposit(G4float e){Statistics.EgammaDeposit.push_back(e);}
+  void FillEElecCreation(G4float e){Statistics.EelecCreation.push_back(e);}
+  void FillEElecDeposit(G4float e){Statistics.EelecDeposit.push_back(e);}
+  void FillPositionDeposit(G4float e){Statistics.PositionDeposit.push_back(e);}
 
 private:
 
