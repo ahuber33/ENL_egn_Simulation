@@ -91,7 +91,8 @@ G4LogicalVolume *Geometry::GetPlaque1(){
 
   //Material = scintProp->GetMaterial("Alu");
   //Material = scintProp->GetMaterial("Tungstene");
-  Material = scintProp->GetMaterial("CdTe");
+  //Material = scintProp->GetMaterial("CdTe");
+  Material = scintProp->GetMaterial("Molybdenum");
 
   G4Box *Box = new G4Box   ("Box",             //its name
   			    PlaqueLength/2, PlaqueLength/2, PlaqueThickness/2);    //its size

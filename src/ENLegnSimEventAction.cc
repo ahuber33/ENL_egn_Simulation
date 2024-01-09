@@ -68,12 +68,12 @@ void ENLegnSimEventAction::EndOfEventAction(const G4Event* evt){
   //G4cout << "Edep with resolution = " << Statistics.Deposit_with_resolution << " keV" << G4endl;
 
 
-  if(Statistics.PositionDeposit.size() >0) runac->UpdateStatistics(Statistics);
+  //if(Statistics.PositionDeposit.size() >0) runac->UpdateStatistics(Statistics);
 
 
-  //if(Statistics.ENeutronCreation.size()>0)
+  if(Statistics.EBremCreation.size()>0)
   // if(Statistics.Interaction !=0)
-  // {
-  //   runac->UpdateStatistics(Statistics);
-  // }
+  {
+   runac->UpdateStatistics(Statistics);
+  }
 }

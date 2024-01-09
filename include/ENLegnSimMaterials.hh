@@ -60,6 +60,7 @@ private:
   G4Element* elementAu;
   G4Element* elementCd;
   G4Element* elementTe;
+  G4Element* elementMo;
 
   G4Isotope* Fe56;
 
@@ -104,6 +105,7 @@ private:
   G4Material* Tungstene;
   G4Material* Or;
   G4Material* CdTe;
+  G4Material* Molybdenum;
 
   G4double scintAbsorbconst;
   G4double scintIndexconst;
