@@ -42,10 +42,10 @@ void ENLegnSimRunAction::BeginOfRunAction(const G4Run* aRun){
     RunBranch = theRunTree->Branch("IncidentE", &Stats.IncidentE, "IncidentE/F");
     RunBranch = theRunTree->Branch("Deposit", &Stats.Deposit, "Deposit/F");
     //RunBranch = theRunTree->Branch("Deposit_Resolution", &Stats.Deposit_with_resolution, "Deposit_Resolution/F");
-    // RunBranch = theRunTree->Branch("EBremCreation", "vector<float>", &Stats.EBremCreation);
-    // RunBranch = theRunTree->Branch("EBremPlaque", "vector<float>", &Stats.EBremPlaque);
-    // RunBranch = theRunTree->Branch("ENeutronCreation", "vector<float>", &Stats.ENeutronCreation);
-    // RunBranch = theRunTree->Branch("ENeutronPlaque", "vector<float>", &Stats.ENeutronPlaque);
+    RunBranch = theRunTree->Branch("EBremCreation", "vector<float>", &Stats.EBremCreation);
+    RunBranch = theRunTree->Branch("EBremPlaque", "vector<float>", &Stats.EBremPlaque);
+    //RunBranch = theRunTree->Branch("ENeutronCreation", "vector<float>", &Stats.ENeutronCreation);
+    //RunBranch = theRunTree->Branch("ENeutronPlaque", "vector<float>", &Stats.ENeutronPlaque);
     // RunBranch = theRunTree->Branch("Interaction", &Stats.Interaction, "Interaction/I");
     // RunBranch = theRunTree->Branch("E_Gamma_Creation", "vector<float>", &Stats.EgammaCreation);
     // RunBranch = theRunTree->Branch("E_Gamma_Deposit", "vector<float>", &Stats.EgammaDeposit);

@@ -72,38 +72,38 @@ ENLegnSimSteppingAction::ENLegnSimSteppingAction()
     //###################################################################################
     //###################################################################################
 
-    if(Parent_ID>0 &&theTrack->GetCreatorProcess()->GetProcessName() == "RadioactiveDecay")
-    {
-      if (partname == "gamma")
-      {
-        if (StepNo ==1)
-        {
-          evtac->FillEGammaCreation(Ecin);
-          //G4cout << "E gamma = " << Ecin << G4endl;
-        }
-      }
-
-      if(partname == "e-")
-        if (StepNo ==1)
-        {
-          evtac->FillEElecCreation(Ecin);
-          //G4cout << "E e- = " << Ecin << G4endl;
-        }
-    }
-
-if(aStep->GetPreStepPoint()->GetPhysicalVolume()->GetName() == "CdTe")
-{
-  evtac->AddEdep(aStep->GetTotalEnergyDeposit()/keV);
-  evtac->FillEElecDeposit(aStep->GetTotalEnergyDeposit()/keV);
-  evtac->FillPositionDeposit(z+1);
-  //G4cout << "Edep = " << aStep->GetTotalEnergyDeposit()/keV << " at z = " << z << G4endl;
-}
-
-if(Parent_ID==0 && StepNo==1)
-{
-  evtac->SetIncidentE(aStep->GetPreStepPoint()->GetKineticEnergy()/keV);
-}
-
+//     if(Parent_ID>0 &&theTrack->GetCreatorProcess()->GetProcessName() == "RadioactiveDecay")
+//     {
+//       if (partname == "gamma")
+//       {
+//         if (StepNo ==1)
+//         {
+//           evtac->FillEGammaCreation(Ecin);
+//           //G4cout << "E gamma = " << Ecin << G4endl;
+//         }
+//       }
+//
+//       if(partname == "e-")
+//         if (StepNo ==1)
+//         {
+//           evtac->FillEElecCreation(Ecin);
+//           //G4cout << "E e- = " << Ecin << G4endl;
+//         }
+//     }
+//
+// if(aStep->GetPreStepPoint()->GetPhysicalVolume()->GetName() == "CdTe")
+// {
+//   evtac->AddEdep(aStep->GetTotalEnergyDeposit()/keV);
+//   evtac->FillEElecDeposit(aStep->GetTotalEnergyDeposit()/keV);
+//   evtac->FillPositionDeposit(z+1);
+//   //G4cout << "Edep = " << aStep->GetTotalEnergyDeposit()/keV << " at z = " << z << G4endl;
+// }
+//
+// if(Parent_ID==0 && StepNo==1)
+// {
+//   evtac->SetIncidentE(aStep->GetPreStepPoint()->GetKineticEnergy()/keV);
+// }
+//
 
 
 
@@ -113,50 +113,50 @@ if(Parent_ID==0 && StepNo==1)
   //###################################################################################
   //###################################################################################
 
-    // if(aStep->GetPreStepPoint()->GetPhysicalVolume()->GetName() == "PlaqueAcier") {evtac->AddEdep(aStep->GetTotalEnergyDeposit()/keV);}
-    //
-    // if(Parent_ID==0 && StepNo==1)
-    // {
-    //   evtac->SetIncidentE(aStep->GetPreStepPoint()->GetKineticEnergy()/keV);
-    // }
-    //
-    // if(Parent_ID >0 && partname == "gamma")
-    // {
-    //   if(aStep->GetTrack()->GetCreatorProcess()->GetProcessName()=="eBrem")
-    //   {
-    //     if(StepNo==1)
-    //     {
-    //       evtac->FillEBremCreation(aStep->GetPreStepPoint()->GetKineticEnergy()/keV);
-    //       //G4cout << "E gamma brem = " << aStep->GetPreStepPoint()->GetKineticEnergy()/keV << G4endl;
-    //     }
-    //     if(aStep->GetPreStepPoint()->GetPhysicalVolume()->GetName() == "PhysicalWorld")
-    //     {
-    //       evtac->FillEBremPlaque(aStep->GetPreStepPoint()->GetKineticEnergy()/keV);
-    //       //G4cout << "E gamma brem en sortie plaque = " << aStep->GetPreStepPoint()->GetKineticEnergy()/keV << G4endl;
-    //     }
-    //   }
-    // }
-    //
-    // if(Parent_ID >0 && partname =="neutron")
-    // {
-    //   if(aStep->GetTrack()->GetCreatorProcess()->GetProcessName()=="photonNuclear")
-    //   {
-    //     if(StepNo ==1)
-    //     {
-    //       //G4cout << "neutron process : " << aStep->GetTrack()->GetCreatorProcess()->GetProcessName() << G4endl;
-    //       //G4cout << "neutron energy creation = " << aStep->GetPreStepPoint()->GetKineticEnergy()/keV << G4endl;
-    //       evtac->FillENeutronCreation(aStep->GetPreStepPoint()->GetKineticEnergy()/keV);
-    //     }
-    //
-    //     if(aStep->GetPreStepPoint()->GetPhysicalVolume()->GetName() == "PhysicalWorld")
-    //     {
-    //       evtac->FillENeutronPlaque(aStep->GetPreStepPoint()->GetKineticEnergy()/keV);
-    //       //G4cout << "neutron energy en sortie plaque = " << aStep->GetPreStepPoint()->GetKineticEnergy()/keV << G4endl;
-    //     }
-    //
-    //   }
-    // }
-    //
+    if(aStep->GetPreStepPoint()->GetPhysicalVolume()->GetName() == "PlaqueAcier") {evtac->AddEdep(aStep->GetTotalEnergyDeposit()/keV);}
+
+    if(Parent_ID==0 && StepNo==1)
+    {
+      evtac->SetIncidentE(aStep->GetPreStepPoint()->GetKineticEnergy()/keV);
+    }
+
+    if(Parent_ID >0 && partname == "gamma")
+    {
+      if(aStep->GetTrack()->GetCreatorProcess()->GetProcessName()=="eBrem")
+      {
+        if(StepNo==1)
+        {
+          evtac->FillEBremCreation(aStep->GetPreStepPoint()->GetKineticEnergy()/keV);
+          //G4cout << "E gamma brem = " << aStep->GetPreStepPoint()->GetKineticEnergy()/keV << G4endl;
+        }
+        if(aStep->GetPreStepPoint()->GetPhysicalVolume()->GetName() == "PhysicalWorld")
+        {
+          evtac->FillEBremPlaque(aStep->GetPreStepPoint()->GetKineticEnergy()/keV);
+          //G4cout << "E gamma brem en sortie plaque = " << aStep->GetPreStepPoint()->GetKineticEnergy()/keV << G4endl;
+        }
+      }
+    }
+
+    if(Parent_ID >0 && partname =="neutron")
+    {
+      if(aStep->GetTrack()->GetCreatorProcess()->GetProcessName()=="photonNuclear")
+      {
+        if(StepNo ==1)
+        {
+          //G4cout << "neutron process : " << aStep->GetTrack()->GetCreatorProcess()->GetProcessName() << G4endl;
+          //G4cout << "neutron energy creation = " << aStep->GetPreStepPoint()->GetKineticEnergy()/keV << G4endl;
+          evtac->FillENeutronCreation(aStep->GetPreStepPoint()->GetKineticEnergy()/keV);
+        }
+
+        if(aStep->GetPreStepPoint()->GetPhysicalVolume()->GetName() == "PhysicalWorld")
+        {
+          evtac->FillENeutronPlaque(aStep->GetPreStepPoint()->GetKineticEnergy()/keV);
+          //G4cout << "neutron energy en sortie plaque = " << aStep->GetPreStepPoint()->GetKineticEnergy()/keV << G4endl;
+        }
+
+      }
+    }
+
     //
     // if(partname =="gamma" && endproc !="Transportation")
     // {

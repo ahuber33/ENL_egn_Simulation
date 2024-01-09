@@ -157,6 +157,7 @@ void ENLegnSimMaterials::Construct()
 	elementAu = new G4Element ("Au", "Au", 79., 196.966569*g/mole);
 	elementCd = new G4Element ("Cadmium", "Cadmium", 48., 112.414*g/mole);
 	elementTe = new G4Element ("Tellure", "Tellure", 52., 127.60*g/mole);
+	elementMo = new G4Element ("Molybdenum", "Molybdenum", 42., 95.95*g/mole);
 	Fe56 = new G4Isotope("Fe56", 26, 56);
 	elementFe = new G4Element("Fer", "Fer", 1);
 	elementFe->AddIsotope(Fe56, 1);
@@ -188,6 +189,13 @@ void ENLegnSimMaterials::Construct()
 
 	Or = new G4Material("Or", 19.3*g/cm3, 1);
 	Or->AddElement(elementAu, 1);
+
+
+	//#######################################################################################################################################
+	//#######################################################################################################################################
+
+	Molybdenum = new G4Material("Molybdenum", 10.28*g/cm3, 1);
+	Molybdenum->AddElement(elementMo, 1);
 
 
 	//#######################################################################################################################################

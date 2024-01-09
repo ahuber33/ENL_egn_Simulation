@@ -20,28 +20,28 @@
 # - Add of NeutronHPphysics
 # - Creation of vectors in the ROOT Tree to obtain all datas about gammas and neutrons for each events
 
-#commit #2 [ENLegnSim.0.0.1]
+# Commit #2 [ENLegnSim.0.0.1]
 # - Cleaning of vis.mac and vmrl.mac
 # - Add a condition for the datas integration -> ROOT files too fat due to IncidentE and deposit if you want information on neutron with stat
 
-#commit #3 [ENLegnSim.0.0.2] le 24/03/2022
+# Commit #3 [ENLegnSim.0.0.2] le 24/03/2022
 # - Add of INL cross sections data from different materials in order ton plot and compare with simulation. OK even is accuracy can be better with utilisation of LEND DATA.
 # - Add some materials (Pb, W)
 # - Add new geometries for studies with more than 1 plate
 
-#commit #4 [ENLegnSim.0.0.3] le 20/07/2022
+# Commit #4 [ENLegnSim.0.0.3] le 20/07/2022
 # - All the data files for cross section (ENDF, JENDL, ...) commit.
 # - Ajout du matériau Silicon
 # - Ajout d'une branche interaction pour connaitre les interactions liés aux gammas (utilisé lors du stage de Samuel Lecanuet pour comparaison).
 
-<<<<<<< HEAD
 # Commit #5 [ENLegnSim.0.0.4] le 26/09/2022
-=======
-# Commit #4 [ENL_egn_Sim.0.0.4] le 26/09/2022
->>>>>>> 7a50590392acbb5b83f6b86c1280a493d4c1512f
 # - A la demande du groupe pour Emmanuel, simulation rapide du Co57 afin d'avoir un spectre simulé + génération d'un spectre exp gamma. Le tout sur un CdTe de 2mm de profondeur avec 1mm d'alu juste devant. Les modifications dans le SteppingAction sont délimités.
 # - Afin de gagner du temps, la PhysicsList neutron a été commentée.
 # - Ajout élements Or, Cd et Te
 # - Ajout matériaux Or, CdTe
 # - Ajout de nouvelles fonctions et variables dans EventAction.hh et initialisation et Fill dans .cc
 # - Ajout Plot_Manu.cc pour plotter les résultats que demandait Emmanuel
+
+# Commit #6 le 09/01/2024 [ENLegnSim.0.1.0]
+# - Passage du code sur la version 11.2.0 de GEANT4
+# - Passage de Atom vers Visual Code Studio avec notamment création d'une branche save permettant de push les changements d'une journée avant demerge sur la branche principale
